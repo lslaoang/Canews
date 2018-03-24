@@ -1,0 +1,261 @@
+html{
+        font-family:"Century Gothic";
+
+}
+
+
+body {
+   background-color: #FFFFFF; 
+   font-family:"Rhodium Libre";
+
+  }
+  .navbar-nav{
+  margin-top:14px;
+  position: fixed;
+}
+
+.navbar-nav .nav li{
+  height:50px;
+  position: fixed;
+}
+
+.navbar-nav > li > a{
+  padding-top:8px;
+  padding-bottom:8px;
+  line-height:32px;
+  position: fixed;
+
+}
+
+.navbar-default .navbar-nav > li > a{
+  color:#333;
+  width: 50px;
+  font-weight:bold;
+  background-color:rgba(255,255,255,0.4);
+  position: fixed;
+
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+  color:#fff;
+  width: 100%;
+  background-color:rgba(0,0,0,0.6);
+  font-weight:bold;
+  position: fixed;
+
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+  color:#fff;
+  background-color:rgba(0,0,0,0.6);
+  font-weight:bold;
+  position: fixed;
+  width: 100%;
+
+}
+
+.navbar-toggle{
+  background-color:#fff !important;
+  box-shadow:1px 1px 1px rgba(0,0,0,0.4);
+  margin-top:15px;
+  position: fixed;
+
+}
+
+nav.navbar.navbar-default{
+  background-color: #FFF;
+  box-shadow:none;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+}
+
+.glyphicon
+{
+  margin-left:-50px;
+  margin-top: 10px;
+  
+}
+
+
+.navbar-brand{
+  margin-top: 10px;
+  padding-left: 0px;
+  height:65px;
+  font-size:35px;
+  font-family:"Rhodium Libre";
+  color:#000!important;
+  text-shadow:1px 1px 1px rgba(0,0,0,0.4);
+  
+}
+
+.navbar-brand span.text-title{
+  text-transform:uppercase;
+  font-weight:bold;
+  position: fixed;
+}
+
+@media (max-width:767px) {
+  .navbar-brand span.text-title{
+    display:none;
+  }
+}
+
+.navbar-brand .glyphicon{
+  display:inline-block;
+  font-size:45px;
+  color:#fff;
+  vertical-align:middle;
+  margin-right:20px;
+  position:fixed;
+  top:-2px;
+}
+
+@media (min-width:768px) {
+  .navbar-nav li{
+    margin-left:10px;
+    position: fixed;
+  }
+}
+
+.card {
+    max-width: 5px;
+    height: 10px;
+    margin: auto;
+    margin-bottom: 5px;
+    text-align: center;
+    top: 90px;
+    
+}
+
+.title {
+    color: grey;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+}
+
+button:hover, a:hover {
+    opacity: 0.7;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 70px;
+    bottom: 0px;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 300px;
+    background-color: #FFFFFF; 
+}
+
+
+.sidenav a {
+    text-decoration: none;
+    font-size: 25px;
+    top: 2000px;
+    color: #000000;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #696969;
+}
+
+.sidenav-right {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 70px;
+    right: 0;
+    bottom: 0px;
+    overflow-x: hidden;
+    padding-top: 300px;
+     background-color: #FFFFFF; 
+}
+
+.sidenav-right a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav-right a:hover {
+    color: #f1f1f1;
+}
+.main {
+    font-size: 12px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    position: fixed;
+    text-align: center;
+    top: 180px;
+    bottom: 0px;
+    right: 100px;
+    margin-left:80px; 
+    margin-right:150px
+    background-color: #FFFFFF; 
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.post-container {
+    position: relative;
+
+    height: 520px;
+    width: 100%;
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    opacity: 1.0;
+    filter: alpha(opacity=50);
+}
+
+footer{
+    position: fixed;
+    top: 700px;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    left: 0px;
+    right: 0px;
+    padding: 10px;
+
+}
+footer h5{
+  color:inherit;
+  
+}
+h3{
+    font-size: 30px; 
+    color: black; 
+    text-align: center; 
+    margin-left: 120px; 
+    text-shadow: 0px 1px 0px #f2f2f2;
+    margin-bottom: 20px;
+    top: 70px;
+}
+p{
+  font-size: 18px; 
+    color: #000000; 
+    text-align: justify; 
+    margin-left: 140px; 
+    margin-right: 100px;
+    text-shadow: 0px 1px 0px #D3D3D3;
+    margin-bottom: 20px;
+    top: 70px;
+}

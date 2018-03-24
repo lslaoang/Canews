@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CANEWS | About</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rhodium+Libre">
+    <link rel="stylesheet" href="FBHome.css">
+    <link rel="stylesheet" href="assets/bootstrap/fonts/font-awesome.min.css">
+
+</head>
+<body>
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '1801651700131258',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v2.12'
+          });
+          FB.getLoginStatus(function(response) {
+              statusChangeCallback(response);
+          });
+
+          FB.Event.subscribe('auth.logout', function(){
+          window.location.href = 'http://localhost/canews/index.html';
+          });
+
+        };
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "//connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+         function statusChangeCallback(response){
+           if(response.status === 'connected'){
+             console.log('Logged in and authenticated');
+             setElements(true);
+             testAPI();
+           } else {
+             console.log('Not authenticated');
+             setElements(false);
+           }
+         }
+        function checkLoginState() {
+          FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+          });
+        }
+        function testAPI(){
+          FB.api('/me?fields=name,email,birthday,location', function(response){
+            if(response && !response.error){
+              //console.log(response);
+              buildProfile(response);
+            }
+            FB.api('/me/feed', function(response){
+              if(response && !response.error){
+                buildFeed(response);
+              }
+            });
+          })
+        }
+        function buildProfile(user){
+          let profile = `
+            <h3>${user.name}</h3>
+            <ul class="list-group">
+              <li class="list-group-item">User ID: ${user.id}</li>
+              <li class="list-group-item">Email: ${user.email}</li>
+              <li class="list-group-item">Birthday: ${user.birthday}</li>
+              <li class="list-group-item">User ID: ${user.location.name}</li>
+            </ul>
+          `;
+          document.getElementById('profile').innerHTML = profile;
+        }
+        function buildFeed(feed){
+          let output = '<h3>Latest Posts</h3>';
+          for(let i in feed.data){
+            if(feed.data[i].message){
+              output += `
+                <div class="well">
+                  ${feed.data[i].message}
+                </div>
+              `;
+            }
+          }
+          document.getElementById('feed').innerHTML = output;
+        }
+        function setElements(isLoggedIn){
+          if(isLoggedIn){
+            document.getElementById('logout').style.display = "block";
+        document.getElementById('fb-button').style.display = "none";
+            document.getElementById('profile').style.display = "block";
+            document.getElementById('feed').style.display = "block";
+            document.getElementById('heading').style.display = "none";
+          } else {
+            document.getElementById('logout').style.display = "none";
+        document.getElementById('fb-button').style.display = "block";
+            document.getElementById('profile').style.display = "none";
+            document.getElementById('feed').style.display = "none";
+            document.getElementById('heading').style.display = "block";
+          }
+        }
+        function logout(){
+          FB.logout(function(response){
+            setElements(false);
+            window.location.href = 'http://localhost/canews/index.html';
+          });
+        }
+      </script>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><a class="navbar-brand navbar-link" href="#"><span class="glyphicon glyphicon-map-marker" style="color: red"></span><span class="text-title"> CANEWS</span></a>
+                </div>
+                    <div class="collapse navbar-collapse" id="navcol-1"></div>
+            </div>
+        </nav>
+    </header>
+
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class="card" style="position: relative;">
+       
+
+        <div class="sidenav">
+            <h1>John Doe</h1>
+            <!-- <li class="active"></li> -->
+            <a href="FBHome.html">Home</a>
+            <a href="ProfileFb.html">Profile </a>
+            <a href="AboutFb.html">About </a>
+            <a id="logout" href="#" onclick="logout()">Logout</a>
+
+        </div>
+
+        <div class="sidenav-right">
+            <h1>Weather</h1>
+      
+
+        </div>
+    </div>
+    </div>
+    <div class="main">
+        <h3>About CaNews</h3>
+
+        <p>CaNews is a website that gives information about the weather in the Philippines. Within 24 hours after a disaster happened, people will start tagging and posting the names and pictures of a missing loved ones. CaNews is developed to keep everyone updated whether the families, relatives, or friends of us had survived or not. At the same time, CaNews will enable survivors to inform their loved ones far from home that they are safe. CaNews filter everything you need to know about the certain typhoon in a specific place. </p>
+
+        <p>The affected individuals will be empowered because they will feel that in their own way, they were able to take control of the situation they were in. They can share what they knew and influence other people's thoughts and actions through their opinions. By being able to tell their stories in their status, survivors will be able to share their grief.</p>
+    </div>
+
+<footer style="position: fixed;">
+
+    <h5>CANEWS 2018</h5>
+        <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    </footer>
+
+</div>
+
+</body>
+</html>
