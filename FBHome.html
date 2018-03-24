@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>CANEWS | Home</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rhodium+Libre">
-    <link rel="stylesheet" href="FBHome.css">
-    <link rel="stylesheet" href="assets/bootstrap/fonts/font-awesome.min.css">
+<title>CaNews</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="styelsheet" href="row.css">
 
-</head>
+<style>
+body{
+	background-color: skyblue;
+	font-family: Rockwell;
+    background: url('../images/bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+</style>
+
 <body>
-  
-<script>
+
+
+    <script>
         window.fbAsyncInit = function() {
           FB.init({
             appId      : '1801651700131258',
@@ -105,50 +116,87 @@
         function logout(){
           FB.logout(function(response){
             setElements(false);
-            window.location.href = 'http://localhost/canews/index.html';
+            window.location.href = '/index.html';
           });
         }
       </script>
 
-    <header>
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button><a class="navbar-brand navbar-link" href="#"><span class="glyphicon glyphicon-map-marker" style="color: red"></span><span class="text-title"> CANEWS</span></a>
-                </div>
-                
-            </div>
-        </nav>
-    </header>
-        <!-- Add icon library -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <div class="card" style="position: relative;">
-        <div id="status"></div>
-        <div class="sidenav">
-            <h1>John Doe</h1>
-			<!-- <li class="active"></li> -->
-            <a href="FBHome.html">Home</a>
-            <a href="ProfileFb.html">Profile </a>
-            <a href="AboutFb.html">About </a>
-            <a id="logout" href="http://localhost/canews/index.html" onclick="logout()">Logout</a>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1801651700131258&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
-        </div>
-        <div class="sidenav-right">
-            <h1>Weather</h1>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a  class="w3-bar-item w3-button" href="FBHome.html">CaNews</a>
+     <!-- Right-sided navbar links. Hide them on small screens -->
+     <div class="w3-right w3-hide-small">
+        
+        <a id="logout" href="#" onclick="logout()"class="w3-bar-item w3-button" >Logout</a>   
+               
+      </div>
 
-        </div>
+    <div class="w3-right w3-hide-small">
+      <a href="AboutFB.html" class="w3-bar-item w3-button">About</a>
     </div>
+  
+  </div>
+</div>
 
-<footer>
-   <h5>CANEWS 2018</h5>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    </footer>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+        <a class="weatherwidget-io" href="https://forecast7.com/en/12d88121d77/philippines/" data-label_1="PHILIPPINES" data-label_2="WEATHER" data-theme="retro-sky" >PHILIPPINES WEATHER</a>
+        <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+        </script>
+        
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <h1 class="w3-center">Weather</h1><br>
+            <a href="https://www.accuweather.com/en/ph/manila/264885/weather-forecast/264885" class="aw-widget-legal">
+                <!--
+                By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+                -->
+                </a><div id="awcc1521856921636" class="aw-widget-current"  data-locationkey="264885" data-unit="c" data-language="en-us" data-useip="false" data-uid="awcc1521856921636"></div><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+            
+                <a href="https://www.accuweather.com/en/ph/cebu-city/262768/weather-forecast/262768" class="aw-widget-legal">
+                    <!--
+                    By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+                    -->
+                    </a><div id="awcc1521860502415" class="aw-widget-current"  data-locationkey="262768" data-unit="f" data-language="en-us" data-useip="false" data-uid="awcc1521860502415"></div><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+
+                    <a href="https://www.accuweather.com/en/ph/davao-city/262966/weather-forecast/262966" class="aw-widget-legal">
+                        <!--
+                        By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+                        -->
+                        </a><div id="awcc1521860517974" class="aw-widget-current"  data-locationkey="262966" data-unit="f" data-language="en-us" data-useip="false" data-uid="awcc1521860517974"></div><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+           </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">News</h1><br>
+      <!insert lao's code here>
+      <div class="fb-page" data-href="https://www.facebook.com/pagasa.dost.gov.ph" data-tabs="timeline" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/pagasa.dost.gov.ph" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/pagasa.dost.gov.ph">Dost_pagasa</a></blockquote></div> 
+
+      </div>
+  </div>
+    
+  <script src="conf.js"></script>
+
+   
+  
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>CaNews 2018</p>
+</footer>
+
 </body>
 </html>

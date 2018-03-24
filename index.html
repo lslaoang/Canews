@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/bootstrap/fonts/font-awesome.min.css">
 </head>
 
-<body background="C://Users/320-14isk/Desktop/Canews/img/bg8.jpg">
+<body background="img/bg8.jpg">
 <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -22,10 +22,11 @@
         });
         FB.getLoginStatus(function(response) {
             statusChangeCallback(response);
+            alert("@@@@@@@@@@@@@@@@@")
         });
         FB.Event.subscribe('auth.login', function(){
         alert("Logged in. Redirecting now...");
-        window.location = 'http://localhost/canews/FBHome.html';
+        window.location = 'FBHome.html';
             });
       };
       (function(d, s, id){
@@ -35,6 +36,7 @@
          js.src = "//connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
+
        function statusChangeCallback(response){
          if(response.status === 'connected'){
            console.log('Logged in and authenticated');
@@ -118,7 +120,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button><a class="navbar-brand navbar-link" href="http://localhost/canews/index.html"><span class="glyphicon glyphicon-map-marker" style="color: red"></span><span class="text-title">canews </span></a></div>
+                    </button><a class="navbar-brand navbar-link" href="index.html"><span class="glyphicon glyphicon-map-marker" style="color: red"></span><span class="text-title">canews </span></a></div>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right">
 
